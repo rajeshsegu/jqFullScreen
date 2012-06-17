@@ -14,16 +14,26 @@ In short, jqFullScreen provides an easy way for web content to be presented usin
 using jQuery should be able to just include this in thier page and it should work.
 
 Usage:
+=====
 
-//Convenient Methods
+/****** Convenient Methods *******/
 
-$("#div-for-fullscreen").enterFullScreen();   // Make div-for-fullscreen htmlEl enter into full-screen mode
+// Make div-for-fullscreen htmlEl enter into full-screen mode
 
-$().exitFullScreen();       //document exits full-screen mode
+$("#div-for-fullscreen").enterFullScreen();   
+-----
 
-$("#div-for-fullscreen").onFullScreenChange(handler)  //Fire on full-screen mode change
+//document exits full-screen mode
 
-//Static Helper Methods
+$().exitFullScreen();       
+------
+
+//Fire on full-screen mode change
+
+$("#div-for-fullscreen").onFullScreenChange(handler)  
+----
+
+/****** Static Helper Methods *******/
 
 $.FullScreen.isSupported()  //Checks if the browser supports FullScreen API
 
