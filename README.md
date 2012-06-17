@@ -77,40 +77,66 @@ Presentation :
 :fullscreen psuedo class is added to the html element once in full-screen mode.
 
 div:fullscreen{    //W3C proposal
+
   height: 100%;
-	width: 100%;
+  
+  width: 100%;  
+  
 }
 
 div:-webkit-full-screen {     //WebKit
+
     width: 100% !important;
+    
     height: 100% !important;
+    
 }
 
 div:-moz-full-screen {        //Mozilla
+
     width: 100% !important;
+    
     height: 100% !important;
+    
 }	
 
 //Helper classes to show/hide elements when in full-screen mode
 
 :fullscreen .hide-onfullscreen {
+
 	display:none;
+	
 }
+
 :-webkit-full-screen .hide-onfullscreen {
+
     display: none;
+    
 }
 :-moz-full-screen .hide-onfullscreen {
+
     display: none;
+    
 }
+
 :fullscreen .show-onfullscreen {
+
 	display: block;
+	
 }
+
 :-webkit-full-screen .show-onfullscreen {
+
     display: block;
+    
 }
+
 :-moz-full-screen .show-onfullscreen {
+
     display: block;
+    
 }
+
 
 W3C standards indicate that :fullscreen and ::backdrop pseudo-class names when in full-screen mode. No browser is yet to implement :backdrop 
 
@@ -122,5 +148,8 @@ Note:
 4. Its containing block is the initial containing block.
 5. Unless overridden by another specification, its static position for left, right, and top is zero.
 
+References:
+https://developer.mozilla.org/en/DOM/Using_full-screen_mode
+http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html#::backdrop-pseudo-element
 
 
