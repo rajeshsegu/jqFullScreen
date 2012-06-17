@@ -16,9 +16,10 @@ using jQuery should be able to just include this in thier page and it should wor
 Usage:
 =====
 
+Browser Support: Safari 5.1+, Firefox 10+, Chrome 15+
+
+
 /****** Convenient Methods *******/
-
-
 
 $("#div-for-fullscreen").enterFullScreen();   
 -----
@@ -69,9 +70,57 @@ $.FullScreen.onChange(htmlEl, handler)
 -----
 //Fires handler when htmlEl enter/exit full-screen mode
 
-Browser Support: Safari 5.1+, Firefox 10+, Chrome 15+
-===============
 
+Presentation :
+============
+
+:fullscreen psuedo class is added to the html element once in full-screen mode.
+
+div:fullscreen{    //W3C proposal
+  height: 100%;
+	width: 100%;
+}
+
+div:-webkit-full-screen {     //WebKit
+    width: 100% !important;
+    height: 100% !important;
+}
+
+div:-moz-full-screen {        //Mozilla
+    width: 100% !important;
+    height: 100% !important;
+}	
+
+//Helper classes to show/hide elements when in full-screen mode
+
+:fullscreen .hide-onfullscreen {
+	display:none;
+}
+:-webkit-full-screen .hide-onfullscreen {
+    display: none;
+}
+:-moz-full-screen .hide-onfullscreen {
+    display: none;
+}
+:fullscreen .show-onfullscreen {
+	display: block;
+}
+:-webkit-full-screen .show-onfullscreen {
+    display: block;
+}
+:-moz-full-screen .show-onfullscreen {
+    display: block;
+}
+
+W3C standards indicate that :fullscreen and ::backdrop pseudo-class names when in full-screen mode. No browser is yet to implement :backdrop 
+
+Note:
+
+1. The z-index property has no effect in the top layer.
+2. It is rendered as an atomic unit as if it were a sibling of the root element.
+3. It is not rendered if it, or an ancestor, has the display property set to none.
+4. Its containing block is the initial containing block.
+5. Unless overridden by another specification, its static position for left, right, and top is zero.
 
 
 
