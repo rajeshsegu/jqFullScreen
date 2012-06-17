@@ -18,39 +18,59 @@ Usage:
 
 /****** Convenient Methods *******/
 
-// Make div-for-fullscreen htmlEl enter into full-screen mode
+
 
 $("#div-for-fullscreen").enterFullScreen();   
 -----
+// Make div-for-fullscreen htmlEl enter into full-screen mode
 
-//document exits full-screen mode
 
 $().exitFullScreen();       
 ------
+//document exits full-screen mode
 
-//Fire on full-screen mode change
 
 $("#div-for-fullscreen").onFullScreenChange(handler)  
 ----
+//Fire on full-screen mode change
+
+
 
 /****** Static Helper Methods *******/
 
-$.FullScreen.isSupported()  //Checks if the browser supports FullScreen API
+$.FullScreen.isSupported()  
+-----
+//Checks if the browser supports FullScreen API
 
-$.FullScreen.enter(htmlEl)  //Lets htmlEl to enter full-screen
 
-$.FullScreen.exit()         //document exits full-screen mode
+$.FullScreen.enter(htmlEl)  
+----
+//Lets htmlEl to enter full-screen
 
-$.FullScreen.isEnabled()    //Figures out if the browser is in a state that would allow full-screen
 
-$.FullScreen.isActive()     //True, if document is currently is full-screen mode
+$.FullScreen.exit()     
+------
+//document exits full-screen mode
 
-$.FullScreen.getActiveElement()  //Returns the element thats currently in full-screen mode
 
-$.FullScreen.onChange(htmlEl, handler)   //Fires handler when htmlEl enter/exit full-screen mode
+$.FullScreen.isEnabled()
+-----
+//Figures out if the browser is in a state that would allow full-screen
+
+$.FullScreen.isActive()     
+-----
+//True, if document is currently is full-screen mode
+
+$.FullScreen.getActiveElement()  
+-----
+//Returns the element thats currently in full-screen mode
+
+$.FullScreen.onChange(htmlEl, handler)   
+-----
+//Fires handler when htmlEl enter/exit full-screen mode
 
 Browser Support: Safari 5.1+, Firefox 10+, Chrome 15+
-
+===============
 
 
 
