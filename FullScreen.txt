@@ -1,0 +1,58 @@
+jqFullScreen - jQuery plugin for HTML5 FullScreen API
+============
+
+Most browsers/os have the ability to enter a fullscreen or kiosk mode for a while now. Basically the chrome UI vanishes and the content is alone takes up the entire real-estate of the displayed screen. Going a step further to control the content displayed in the full-screen programatically becomes very powerful. Thanks for W3C to comeup with FullScreen API specification and Chrome/Firefox to adopt them quickly.
+
+W3C FullScreen API proposal: http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html
+
+In short, jqFullScreen provides an easy way for web content to be presented using the user's entire screen. Anyone, using jQuery should be able to just include this in thier page and it should work.
+
+Usage:
+=====
+
+/***** Convenient Methods *****/
+
+// Make div-for-fullscreen htmlEl enter into full-screen mode
+
+$("#div-for-fullscreen").enterFullScreen(); 
+
+//document exits full-screen mode
+
+$().exitFullScreen(); 
+
+//Fire on full-screen mode change
+
+$("#div-for-fullscreen").onFullScreenChange(handler) 
+
+/***** Static Helper Methods *****/
+
+//Checks if the browser supports FullScreen API
+
+$.FullScreen.isSupported() 
+
+//Lets htmlEl to enter full-screen
+
+$.FullScreen.enter(htmlEl) 
+
+//document exits full-screen mode
+
+$.FullScreen.exit() 
+
+//Figures out if the browser is in a state that would allow full-screen
+
+$.FullScreen.isEnabled() 
+
+//True, if document is currently is full-screen mode
+
+$.FullScreen.isActive() 
+
+//Returns the element thats currently in full-screen mode
+
+$.FullScreen.getActiveElement() 
+
+//Fires handler when htmlEl enter/exit full-screen mode
+
+$.FullScreen.onChange(htmlEl, handler)
+ 
+
+Browser Support: Safari 5.1+, Firefox 10+, Chrome 15+
