@@ -104,7 +104,7 @@ div:-moz-full-screen {        //Mozilla
 
 :fullscreen .hide-onfullscreen {
 
-	display:none;
+	display: none;	
 	
 }
 
@@ -149,6 +149,7 @@ Note:
 5. Unless overridden by another specification, its static position for left, right, and top is zero.
 
 References:
+
 https://developer.mozilla.org/en/DOM/Using_full-screen_mode
 http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html#::backdrop-pseudo-element
 
