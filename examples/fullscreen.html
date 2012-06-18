@@ -1,0 +1,101 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+/* Generic styles for Full Screen Functionality */   	
+div:fullscreen{
+	height: 100%;
+	width: 100%;
+}
+div:-webkit-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+}
+div:-moz-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+}	
+
+:fullscreen .hide-onfullscreen {
+	display:none;
+}
+:-webkit-full-screen .hide-onfullscreen {
+    display: none;
+}
+:-moz-full-screen .hide-onfullscreen {
+    display: none;
+}
+:fullscreen .show-onfullscreen {
+	display: block;
+}
+:-webkit-full-screen .show-onfullscreen {
+    display: block;
+}
+:-moz-full-screen .show-onfullscreen {
+    display: block;
+}
+.hide {
+	display: none;
+}
+  
+/* App Specific Styles */
+.button-container{
+	font-size: 20px;
+}
+
+  </style>
+</head>
+<body>
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header>
+
+  </header>
+  <div role="main">
+    <p>This is an example of the full-screen API in action. Press the Return or Enter key to toggle full-screen mode.</p>
+    <p><strong>To use full-screen mode, you need Firefox 9 or later or Chrome 15 or later.</strong></p>
+	<div class="content" id="content">
+	  <div class="buttons-container">
+	  	<div id="full-screen-container" class="button-container hide-onfullscreen">
+			<button id="full-screen" name="Enter Full Screen" onclick="launchFullScreen();">Enter Full Screen</button>
+		</div>
+	    <div id="exit-full-screen-container" class="hide button-container show-onfullscreen">
+	    	<button id="exit-full-screen" name="Exit Full Screen" onclick="exitFullScreen();">Exit Full Screen</button>
+	    </div>  
+	  </div>
+	  <br><br>
+	  <div class="video">	   	
+	  	<video controls src="http://videos-cdn.mozilla.net/serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.webm" width="640" height="360" id="myvideo">
+	  </div>
+    </div>
+  </div>
+  <footer>
+
+  </footer>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="../src/jqFullScreen.js"></script>
+  <script>
+  function launchFullScreen(){
+  	  $("#content").enterFullScreen();
+  	  //$.FullScreen.enter(document.getElementById("main-container"));
+  }
+  function exitFullScreen(){
+  	  $.FullScreen.exit();	
+  }
+  </script>
+	
+  	
+
+</body>
+</html>
