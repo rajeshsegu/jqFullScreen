@@ -151,6 +151,7 @@ Note:
 References:
 
 https://developer.mozilla.org/en/DOM/Using_full-screen_mode
+
 http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html#::backdrop-pseudo-element
 
 
