@@ -110,6 +110,19 @@
                     callback(el, fullScreen.isActive());
                 }
             }, true);
+            el.addEventListener('webkitfullscreenchange', function(event) {
+      			if(callback instanceof Function){
+                    //pass el and isActive flag to handle UI changes.
+                    callback(el, fullScreen.isActive());
+                }
+    		}, true);
+			el.addEventListener('mozfullscreenchange', function(event) {
+				if(callback instanceof Function){
+                    //pass el and isActive flag to handle UI changes.
+                    callback(el, fullScreen.isActive());
+                }	
+		    }, true);
+
         }
 
         

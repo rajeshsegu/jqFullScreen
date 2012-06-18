@@ -16,15 +16,22 @@
 div:fullscreen{
 	height: 100%;
 	width: 100%;
+	background-color:white;
 }
 div:-webkit-full-screen {
     width: 100% !important;
     height: 100% !important;
+    background-color: white;
 }
 div:-moz-full-screen {
     width: 100% !important;
     height: 100% !important;
-}	
+    background-color:white;
+}
+:-moz-full-screen video{
+    width: 100% !important;
+    height: 100% !important;
+}
 
 :fullscreen .hide-onfullscreen {
 	display:none;
@@ -60,13 +67,16 @@ div:-moz-full-screen {
   <header>
 
   </header>
-  <div role="main">
+  <div role="main" id="main">
     <p>This is an example of the full-screen API in action. Press the Return or Enter key to toggle full-screen mode.</p>
     <p><strong>To use full-screen mode, you need Firefox 9 or later or Chrome 15 or later.</strong></p>
 	<div class="content" id="content">
 	  <div class="buttons-container">
+        <div id="page-full-screen-container" class="button-container hide-onfullscreen">
+			<button id="page-full-screen" name="Enter Full Screen" onclick="pageFullScreen();">Enter Full Screen</button>
+		</div>	  
 	  	<div id="full-screen-container" class="button-container hide-onfullscreen">
-			<button id="full-screen" name="Enter Full Screen" onclick="launchFullScreen();">Enter Full Screen</button>
+			<button id="full-screen" name="Enter Full Screen" onclick="launchFullScreen();">Video Full Screen</button>
 		</div>
 	    <div id="exit-full-screen-container" class="hide button-container show-onfullscreen">
 	    	<button id="exit-full-screen" name="Exit Full Screen" onclick="exitFullScreen();">Exit Full Screen</button>
@@ -86,9 +96,13 @@ div:-moz-full-screen {
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="../src/jqFullScreen.js"></script>
   <script>
+  function pageFullScreen(){
+  	  $("#main").enterFullScreen();
+  	  //$.FullScreen.enter(document.getElementById("main"));
+  }
   function launchFullScreen(){
   	  $("#content").enterFullScreen();
-  	  //$.FullScreen.enter(document.getElementById("main-container"));
+  	  //$.FullScreen.enter(document.getElementById("content"));
   }
   function exitFullScreen(){
   	  $.FullScreen.exit();	

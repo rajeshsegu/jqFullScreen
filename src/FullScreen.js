@@ -91,13 +91,25 @@ var FullScreen = {
      * TODO: FIX this for FIREFOX
      */
     onChange: function(el, callback){
-        var fullScreen = this;
-        el.addEventListener('fullscreeneventchange', function(e) {
-            if(callback instanceof Function){
-                //pass el and isActive flag to handle the UI.
-                callback(el, fullScreen.isActive());
-            }
-        }, true);
+            var fullScreen = this;
+            el.addEventListener('fullscreeneventchange', function(e) {
+                if(callback instanceof Function){
+                    //pass el and isActive flag to handle UI changes.
+                    callback(el, fullScreen.isActive());
+                }
+            }, true);
+            el.addEventListener('webkitfullscreenchange', function(event) {
+      			if(callback instanceof Function){
+                    //pass el and isActive flag to handle UI changes.
+                    callback(el, fullScreen.isActive());
+                }
+    		}, true);
+			el.addEventListener('mozfullscreenchange', function(event) {
+				if(callback instanceof Function){
+                    //pass el and isActive flag to handle UI changes.
+                    callback(el, fullScreen.isActive());
+                }	
+		    }, true);
     }
 
     // note: unlike Webkit and the W3C proposal,
